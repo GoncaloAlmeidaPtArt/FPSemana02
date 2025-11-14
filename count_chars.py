@@ -1,14 +1,13 @@
-#Pede duas frases
-fraseUm = input()
-fraseDois = input()
+string = input()
+dicionario = {}
 
-#Transforma as duas frases em conjuntos de palavras
-DaPrimeira = set(fraseUm.split())
-DaSegunda = set(fraseDois.split())
+for x in string:
+    if x == " ":
+        continue
+    if x not in dicionario:
+        dicionario[x] = 1
+    else:
+        dicionario[x] += 1
 
-intersesao = DaPrimeira.intersection(DaSegunda)
-
-ordenado = sorted(intersesao)
-
-print(" ".join(sorted(ordenado, key=lambda isWord: (not isWord[0].isalpha()))))
+print(dicionario)
 

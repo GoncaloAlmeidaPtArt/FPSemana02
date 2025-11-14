@@ -1,13 +1,12 @@
-string = input()
-dicionario = {}
+fraseUm = input()
+fraseDois = input()
 
-for x in string:
-    if x == " ":
-        continue
-    if x not in dicionario:
-        dicionario[x] = 1
-    else:
-        dicionario[x] += 1
+DaPrimeira = set(fraseUm.split())
+DaSegunda = set(fraseDois.split())
 
-print(dicionario)
+intersesao = DaPrimeira.intersection(DaSegunda)
+
+ordenado = sorted(intersesao)
+
+print(" ".join(sorted(ordenado, key=lambda isWord: (not isWord[0].isalpha()))))
 
